@@ -1,0 +1,240 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --border-thickness: 8px;
+    --mobile-breakpoint: 5024px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    overflow-x: hidden;
+    opacity: 0;
+    transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+.fade-in {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+header, .achievements, .contact, .section-title, .item, .label, .contact-item {
+    mix-blend-mode: difference;
+    color: white;
+}
+
+header {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    z-index: 10;
+    max-width: 70vw;
+}
+
+.name {
+    font-size: clamp(4rem, 14vw, 12rem);
+    line-height: 0.8;
+    font-weight: 900;
+    letter-spacing: -0.06em;
+    margin-bottom: 1rem;
+    word-break: break-all;
+}
+
+.meta {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.video-container {
+    position: absolute;
+    top: calc(50% + 2rem);
+    left: calc(50% - 5rem);
+    transform: translate(-85%, -10%);
+    
+    width: 50vw;
+    aspect-ratio: 4 / 3;
+    
+    z-index: 1;
+    overflow: hidden;
+    
+    border: var(--border-thickness) solid #000000;
+    box-shadow: 30px 30px 0px #353535;
+    margin-bottom: 100rem;
+}
+
+.centerpiece-video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.content-grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.content-grid > div {
+    pointer-events: auto;
+}
+
+.achievements {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    z-index: 10;
+}
+
+.contact {
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    text-align: right;
+    z-index: 10;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    background: white;
+    color: black;
+    mix-blend-mode: difference;
+    display: inline-block;
+    padding: 0 0.5rem;
+}
+
+.item {
+    border-top: var(--border-thickness) solid white;
+    padding-top: 1rem;
+}
+
+.label {
+    display: block;
+    font-weight: 900;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: #aaa;
+}
+
+.item p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-end;
+}
+
+.contact-item {
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 800;
+    transition: all 0.1s ease;
+}
+
+.contact-item:hover {
+    background: white;
+    color: black;
+    mix-blend-mode: difference;
+    padding: 0 0.5rem;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.brutalist-border {
+    height: var(--border-thickness);
+    background: white;
+    mix-blend-mode: difference;
+    width: 100%;
+}
+
+@media (max-width: 1324px) {
+    header {
+        position: relative;
+        top: 0;
+        left: 0;
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    main {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .video-container {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        margin-bottom: 0;
+        box-shadow: 15px 15px 0px #353535;
+    }
+
+    .content-grid {
+        position: relative;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        pointer-events: auto;
+    }
+
+    .achievements, .contact {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        top: 0;
+        max-width: 100%;
+        text-align: left;
+    }
+
+    .contact-links {
+        align-items: flex-start;
+    }
+
+    .name {
+        font-size: clamp(3rem, 10vw, 6rem);
+    }
+}
