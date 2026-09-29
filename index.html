@@ -3,62 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DORIAN BENBASSAT</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Dorian Benbassat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: #fff;
+            color: #000;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        main {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 120px 24px;
+        }
+
+        h1 {
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: lowercase;
+            margin-bottom: 24px;
+        }
+
+        p {
+            text-transform: lowercase;
+            margin-bottom: 48px;
+        }
+
+        nav a {
+            display: block;
+            color: #0000ee;
+            text-decoration: none;
+            text-transform: lowercase;
+            margin-bottom: 8px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        nav a:visited {
+            color: #0000ee;
+        }
+    </style>
 </head>
-<body onload="document.body.classList.add('loaded')">
-    <div class="fade-in">
-        <header>
-            <h1 class="name">DORIAN BENBASSAT</h1>
-            <div class="meta">
-                <p>BORN IN TEL AVIV | 17.02.2011</p>
-                <p class="roles">PROGRAMMER / FILMMAKER / PHOTOGRAPHER / DESIGNER / MUSICIAN</p>
-            </div>
-        </header>
-
-        <main>
-            <div class="video-container">
-                <video autoplay muted loop playsinline class="centerpiece-video">
-                    <source src="DATA/video.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
-            <section class="content-grid">
-                <div class="achievements">
-                    <h2 class="section-title">ACHIEVEMENTS</h2>
-                    <div class="item">
-                        <span class="label">OFFICIAL SELECTION</span>
-                        <p>DIVISION ZERO — INTERNATIONAL FESTIVAL OF THE MOVING IMAGE [FOMI] LONDON (UNDERGRADUATE CATEGORY)</p>
-                    </div>
-                    <div class="placeholder-item">
-                        <span class="label">iOS PROJECTS</span>
-                        <p>[PENDING]</p>
-                    </div>
-                    <div class="placeholder-item">
-                        <span class="label">INTERNSHIPS</span>
-                        <p>[PENDING]</p>
-                    </div>
-                    <div class="placeholder-item">
-                        <span class="label">WINS</span>
-                        <p>[PENDING]</p>
-                    </div>
-                </div>
-
-                <div class="contact">
-                    <h2 class="section-title">CONNECT</h2>
-                    <div class="contact-links">
-                        <a href="mailto:doribenbass@gmail.com" class="contact-item">doribenbass@gmail.com</a>
-                        <a href="tel:+4915157439022" class="contact-item">+4915157439022</a>
-                        <a href="https://instagram.com" target="_blank" class="contact-item">INSTAGRAM</a>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <div class="brutalist-border"></div>
-        </footer>
-    </div>
+<body>
+    <main>
+        <h1>dorian benbassat</h1>
+        <p>filmmaker. software developer. photographer. designer. student. human. at the intersection of arts and technology.</p>
+        <nav>
+            <a href="https://instagram.com/doribenba">instagram</a>
+            <a href="https://github.com/doribenba">github</a>
+            <a href="https://www.imdb.com/name/nm18616322/">imdb</a>
+            <a href="https://www.linkedin.com/in/dorian-benbassat/">linkedin</a>
+        </nav>
+    </main>
 </body>
 </html>
