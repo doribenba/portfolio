@@ -41,6 +41,46 @@
             box-sizing: border-box;
         }
 
+        .image-marquee {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            width: 100%;
+            margin-top: 64px;
+            margin-bottom: 64px;
+            cursor: default;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: scroll 40s linear infinite;
+        }
+
+        .marquee-content img {
+            height: 250px;
+            margin-right: 16px;
+            vertical-align: middle;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        @media (max-width: 600px) {
+            .marquee-content img {
+                filter: grayscale(0%);
+                height: 300px;
+            }
+        }
+
+        .marquee-content img:hover {
+            filter: grayscale(0%);
+        }
+
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+
         body {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             background: var(--bg);
@@ -169,6 +209,35 @@
                 <a href="https://www.imdb.com/name/nm18616322/">imdb</a>
                 <a href="https://www.linkedin.com/in/dorian-benbassat/">linkedin</a>
             </nav>
+            <div class="image-marquee">
+                <div class="marquee-content">
+                    <img src="images/AVSR_PITCH_SCREENSHOT Medium.jpeg" alt="AVSR pitch deck screenshot">
+                    <img src="images/DorianBenbassat2 Medium 2.jpeg" alt="Dorian Benbassat photography portrait 2">
+                    <img src="images/DorianBenbassat3 Medium.jpeg" alt="Dorian Benbassat photography portrait 3">
+                    <img src="images/PhotographyExample Medium.jpeg" alt="Photography sample example">
+                    <img src="images/SwiftUIMockup Medium.jpeg" alt="SwiftUI app mockup design">
+                    <img src="images/WhatNeverWasPoster Medium.jpeg" alt="What Never Was short film poster">
+                    <img src="images/betaSimualtorGameMilhama Medium.jpeg" alt="Milhama experimental game simulator beta">
+                    <img src="images/divisonZeroLaurels Medium.jpeg" alt="Division Zero short film laurels">
+                    <img src="images/moron Medium.jpeg" alt="Moron newspaper design overhaul">
+                    <img src="images/oracleInternship Medium.jpeg" alt="Oracle Berlin internship project">
+                    <img src="images/phoyographyExample2 Medium.jpeg" alt="Photography sample example 2">
+                    <img src="images/swiftApplicationMockup Medium.jpeg" alt="Swift application mockup design">
+                    <img src="images/AVSR_PITCH_SCREENSHOT Medium.jpeg" alt="AVSR pitch deck screenshot">
+                    <img src="images/DorianBenbassat2 Medium 2.jpeg" alt="Dorian Benbassat photography portrait 2">
+                    <img src="images/DorianBenbassat3 Medium.jpeg" alt="Dorian Benbassat photography portrait 3">
+                    <img src="images/PhotographyExample Medium.jpeg" alt="Photography sample example">
+                    <img src="images/SwiftUIMockup Medium.jpeg" alt="SwiftUI app mockup design">
+                    <img src="images/WhatNeverWasPoster Medium.jpeg" alt="What Never Was short film poster">
+                    <img src="images/betaSimualtorGameMilhama Medium.jpeg" alt="Milhama experimental game simulator beta">
+                    <img src="images/divisonZeroLaurels Medium.jpeg" alt="Division Zero short film laurels">
+                    <img src="images/moron Medium.jpeg" alt="Moron newspaper design overhaul">
+                    <img src="images/oracleInternship Medium.jpeg" alt="Oracle Berlin internship project">
+                    <img src="images/phoyographyExample2 Medium.jpeg" alt="Photography sample example 2">
+                    <img src="images/swiftApplicationMockup Medium.jpeg" alt="Swift application mockup design">
+                </div>
+                </div>
+            </div>
         </header>
 
         <section>
