@@ -4,8 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dorian Benbassat</title>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <style>
+        /*
+           Layout: Classic "web" aesthetic.
+           White backgrounds, black text, classic hyperlink blue.
+        */
+        :root {
+            --bg: #fff;
+            --fg: #000;
+            --accent: #0000ee;
+            --muted: #666;
+            --border: #eee;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --bg: #fff;
+                --fg: #000;
+                --accent: #0000ee;
+                --muted: #666;
+                --border: #eee;
+            }
+        }
+
+        :root[data-theme="dark"] {
+            --bg: #fff;
+            --fg: #000;
+            --accent: #0000ee;
+            --muted: #666;
+            --border: #eee;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -14,8 +43,8 @@
 
         body {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background: #fff;
-            color: #000;
+            background: var(--bg);
+            color: var(--fg);
             font-size: 18px;
             line-height: 1.6;
         }
@@ -26,23 +55,28 @@
             padding: 120px 24px;
         }
 
+        h1, h2, p, a, li, span {
+            text-transform: lowercase;
+        }
+
+        header {
+            margin-bottom: 64px;
+        }
+
         h1 {
             font-size: 18px;
             font-weight: 700;
-            text-transform: lowercase;
             margin-bottom: 24px;
         }
 
-        p {
-            text-transform: lowercase;
+        .intro {
             margin-bottom: 48px;
         }
 
         nav a {
             display: block;
-            color: #0000ee;
+            color: var(--accent);
             text-decoration: none;
-            text-transform: lowercase;
             margin-bottom: 8px;
         }
 
@@ -50,21 +84,248 @@
             text-decoration: underline;
         }
 
-        nav a:visited {
-            color: #0000ee;
+        section {
+            margin-bottom: 64px;
+        }
+
+        h2 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            opacity: 0.5;
+        }
+
+        .entry {
+            margin-bottom: 32px;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 16px;
+        }
+
+        .entry-title {
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .entry-date {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .entry-desc {
+            font-size: 16px;
+            margin-top: 4px;
+        }
+
+        .selection-list {
+            list-style: none;
+            margin-top: 8px;
+            padding-left: 12px;
+            border-left: 1px solid var(--border);
+        }
+
+        .selection-list li {
+            font-size: 16px;
+            margin-bottom: 4px;
+            color: var(--muted);
+        }
+
+        .lang-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 24px;
+        }
+
+        .lang-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+            padding: 4px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .lang-name {
+            font-weight: 600;
+        }
+
+        .lang-lvl {
+            color: var(--muted);
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
     <main>
-        <h1>dorian benbassat</h1>
-        <p>filmmaker. software developer. photographer. designer. student. human. at the intersection of arts and technology.</p>
-        <nav>
-            <a href="https://instagram.com/doribenba">instagram</a>
-            <a href="https://github.com/doribenba">github</a>
-            <a href="https://www.imdb.com/name/nm18616322/">imdb</a>
-            <a href="https://www.linkedin.com/in/dorian-benbassat/">linkedin</a>
-        </nav>
+        <header>
+            <h1>dorian benbassat</h1>
+            <p class="intro">filmmaker. software developer. photographer. designer. student. human. at the intersection of arts and technology.</p>
+            <nav>
+                <a href="https://instagram.com/doribenba">instagram</a>
+                <a href="https://github.com/doribenba">github</a>
+                <a href="https://www.imdb.com/name/nm18616322/">imdb</a>
+                <a href="https://www.linkedin.com/in/dorian-benbassat/">linkedin</a>
+            </nav>
+        </header>
+
+        <section>
+            <h2>tech & design</h2>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">asymmetrical (ios app)</span>
+                    <span class="entry-date">2026</span>
+                </div>
+                <p class="entry-desc">swift • live on app store (usa & israel)</p>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">milhama</span>
+                    <span class="entry-date">beta</span>
+                </div>
+                <p class="entry-desc">experimental game / simulator • live online</p>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">moron (newspaper)</span>
+                    <span class="entry-date">2026</span>
+                </div>
+                <p class="entry-desc">head of design • full design overhaul</p>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">oracle berlin</span>
+                    <span class="entry-date">2026</span>
+                </div>
+                <p class="entry-desc">internship</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>arts</h2>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">photography</span>
+                    <span class="entry-date">since 2024</span>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">division zero (short film)</span>
+                    <span class="entry-date">2026</span>
+                </div>
+                <ul class="selection-list">
+                    <li>fomi (london) — official selection</li>
+                    <li>rec filmfestival berlin — 2nd place (silbener clip)</li>
+                    <li>future filmmakers showcase (la) — official selection</li>
+                    <li>youki youth film festival (austria) — official selection</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">what never was (short film)</span>
+                    <span class="entry-date">2026</span>
+                </div>
+                <p class="entry-desc">experimental</p>
+                <ul class="selection-list">
+                    <li>tel aviv international student film festival — official selection</li>
+                    <li>7siff (buenos aires) — official selection</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>competitions</h2>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">förderpreis geschichtswettbewerb</span>
+                    <span class="entry-date">2024</span>
+                </div>
+                <p class="entry-desc">national award (federal president)</p>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">german avsr</span>
+                    <span class="entry-date">2026</span>
+                </div>
+                <p class="entry-desc">national ai competition • finalist team</p>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">jwinf (informatics)</span>
+                    <span class="entry-date">national</span>
+                </div>
+                <p class="entry-desc">round 3 finalist</p>
+            </div>
+
+        </section>
+
+        <section>
+            <h2>education</h2>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">tu berlin (technische universität)</span>
+                    <span class="entry-date">2025</span>
+                </div>
+                <p class="entry-desc">linear algebra 1 • schülerstudium</p>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">junior akademie berlin (scharfenberg)</span>
+                    <span class="entry-date">2024 & 2025</span>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">carl-von-ossietzky gymnasium</span>
+                    <span class="entry-date">10th grade</span>
+                </div>
+                <p class="entry-desc">gpa: 1.1 (german standard)</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>languages</h2>
+            <div class="lang-grid">
+                <div class="lang-item">
+                    <span class="lang-name">english</span>
+                    <span class="lang-lvl">native</span>
+                </div>
+                <div class="lang-item">
+                    <span class="lang-name">german</span>
+                    <span class="lang-lvl">native</span>
+                </div>
+                <div class="lang-item">
+                    <span class="lang-name">chinese</span>
+                    <span class="lang-lvl">professional</span>
+                </div>
+                <div class="lang-item">
+                    <span class="lang-name">hebrew</span>
+                    <span class="lang-lvl">professional</span>
+                </div>
+                <div class="lang-item">
+                    <span class="lang-name">italian</span>
+                    <span class="lang-lvl">elementary</span>
+                </div>
+                <div class="lang-item">
+                    <span class="lang-name">arabic</span>
+                    <span class="lang-lvl">elementary</span>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 </html>
